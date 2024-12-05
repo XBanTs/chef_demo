@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get A Chef Worldwide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Get A Chef Worldwide</h1>
+        </div>
+        <div class="navbar">
+            <button class="navbar-toggle" onclick="toggleNavbar()">☰</button>
+            <div class="navbar-links">
+                <a href="#">Home</a>
+                <a href="cuisines.html">Cuisines</a>
+                <a href="#">How it Works</a>
+                <a href="#">Become a Chef</a>
+                <a href="#">Sign In</a>
+                <a href="#">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="user-location">
+        <h2>Your Current Location</h2>
+        <div id="location"></div>
+    </section>
+
+    <section class="search">
+        <h2>Find Your Chef</h2>
+        <input type="text" id="searchBar" placeholder="Search chefs by name, cuisine, or service">
+        <button onclick="searchChefs()">Search</button>
+    </section>
+
+    <section class="proximity-search">
+        <h2>Chefs Near You</h2>
+        <button onclick="findNearbyChefs()">Find Chefs Near Me</button>
+        <div id="nearbyChefs"></div>
+    </section>
+
+    <section class="featured-chefs">
+        <h2>Featured Chefs</h2>
+        <div class="chef-list" id="chef-list"></div>
+    </section>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Book Your Chef</h2>
+            <form id="bookingForm">
+                <label for="clientName">Your Name:</label>
+                <input type="text" id="clientName" required>
+
+                <label for="clientEmail">Email:</label>
+                <input type="email" id="clientEmail" required>
+
+                <label for="bookingDate">Date for Service:</label>
+                <input type="date" id="bookingDate" required>
+
+                <button type="submit">Book Chef</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Get A Chef Worldwide. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

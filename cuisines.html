@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get A Chef Worldwide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1>Get A Chef Worldwide</h1>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+
+    <!-- Cuisines Offered Section -->
+    <section class="cuisines">
+        <h2>Explore Cuisines Offered by Our Chefs</h2>
+        <div class="cuisine-list">
+            <!-- Cuisine 1 -->
+            <div class="cuisine-card">
+                <img src="images/italian-cuisine.jpeg" alt="Italian Cuisine">
+                <h3>Italian Cuisine</h3>
+                <p>Experience authentic Italian dishes such as pasta, pizza, and tiramisu made by skilled chefs.</p>
+                <p class="rate"><strong>Rate:</strong> $50 - $150 per event</p> <!-- Chef rate -->
+                <button onclick="showBookingModal('Italian Cuisine')">Book Chef</button>
+            </div>
+            <!-- Cuisine 2 -->
+            <div class="cuisine-card">
+                <img src="images/japanese-cuisine.jpeg" alt="Japanese Cuisine">
+                <h3>Japanese Cuisine</h3>
+                <p>Savor the fresh flavors of sushi, ramen, and tempura, prepared by top Japanese chefs.</p>
+                <p class="rate"><strong>Rate:</strong> $60 - $180 per event</p> <!-- Chef rate -->
+                <button onclick="showBookingModal('Japanese Cuisine')">Book Chef</button>
+            </div>
+            <!-- Cuisine 3 -->
+            <div class="cuisine-card">
+                <img src="images/mexican-cuisine.jpeg" alt="Mexican Cuisine">
+                <h3>Mexican Cuisine</h3>
+                <p>Indulge in tacos, enchiladas, and guacamole with the finest Mexican chefs in the world.</p>
+                <p class="rate"><strong>Rate:</strong> $40 - $120 per event</p> <!-- Chef rate -->
+                <button onclick="showBookingModal('Mexican Cuisine')">Book Chef</button>
+            </div>
+            <!-- Cuisine 4 -->
+            <div class="cuisine-card">
+                <img src="images/vegan-cuisine.jpeg" alt="Vegan Cuisine">
+                <h3>Vegan Cuisine</h3>
+                <p>Delight in plant-based meals that are both delicious and nutritious, made by expert vegan chefs.</p>
+                <p class="rate"><strong>Rate:</strong> $45 - $130 per event</p> <!-- Chef rate -->
+                <button onclick="showBookingModal('Vegan Cuisine')">Book Chef</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Booking -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Book Chef for <span id="chef-name"></span></h3>
+            <form id="bookingForm">
+                <label for="chefName">Chef Name:</label>
+                <input type="text" id="chefName" name="chefName" readonly>
+                <label for="eventDate">Date:</label>
+                <input type="date" id="eventDate" name="eventDate">
+                <button type="submit">Book Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Get A Chef Worldwide. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,450 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    font-size: 1.5rem;
+}
+
+header .navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+header .navbar a:hover {
+    text-decoration: underline;
+}
+
+h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+/* Layout Styles */
+section {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.search {
+    text-align: center;
+}
+
+input[type="text"], input[type="date"], input[type="email"], input[type="number"] {
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.chef-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.chef-card {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.chef-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    max-width: 150px;
+    margin-bottom: 1rem;
+}
+
+.chef-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.chef-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.chef-card button {
+    margin-top: 1rem;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+    margin-top: 2rem;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For Tablets (e.g., iPad) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header .navbar {
+        margin-top: 1rem;
+    }
+
+    .search input[type="text"], .search button {
+        width: 100%;
+    }
+
+    .chef-list {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .chef-card img {
+        max-width: 120px;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}
+
+/* For Small Screens (Mobile Devices) */
+@media (max-width: 480px) {
+    header {
+        padding: 1rem;
+    }
+
+    header .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    header .navbar a {
+        font-size: 0.9rem;
+        margin: 0.5rem 0;
+    }
+
+    .search input[type="text"], .search button {
+        width: 100%;
+    }
+
+    .chef-list {
+        grid-template-columns: 1fr;
+    }
+
+    .chef-card img {
+        max-width: 100px;
+    }
+
+    .modal-content {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+}
+
+/* For Larger Screens (Desktops and Laptops) */
+@media (min-width: 1200px) {
+    .chef-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .chef-card {
+        padding: 1.5rem;
+    }
+
+    .modal-content {
+        width: 50%;
+    }
+}
+/* Cuisines Section */
+.cuisines {
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.cuisines h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.cuisine-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.cuisine-card {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.cuisine-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.cuisine-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.cuisine-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.cuisine-card .rate {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 1rem 0;
+}
+
+.cuisine-card button {
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.cuisine-card button:hover {
+    background-color: #555;
+}
+
+/* Cuisines Section */
+.cuisines {
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.cuisines h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.cuisine-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.cuisine-card {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.cuisine-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.cuisine-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.cuisine-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.cuisine-card button {
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.cuisine-card button:hover {
+    background-color: #555;
+}
+/* Style for the navbar and the toggle button */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 10px;
+}
+
+.navbar-toggle {
+    background-color: #333;
+    color: white;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 15px;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.navbar-links a:hover {
+    background-color: #444;
+}
+
+/* Media query to make the navbar responsive */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        padding: 10px 0;
+    }
+    
+    .navbar-links a {
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+}
+
+/* Styling for the chef card */
+.chef-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.chef-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.chef-rate {
+    font-size: 1.2em;
+    color: #4caf50;
+    font-weight: bold;
+}
+
+.star-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    margin-top: 5px;
+}
+
+.star {
+    font-size: 20px;
+    color: #ff9800; /* Gold color for filled stars */
+}
+
+.rating-number {
+    font-size: 0.9em;
+    color: #333;
+    margin-left: 8px;
+}
