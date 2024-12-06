@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef John - Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Book Chef Button */
+.book-btn {
+    padding: 10px 20px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.book-btn:hover {
+    background-color: #f57c00;
+}
+
+/* The Modal (hidden by default) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style the form */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+form button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Chef John - Profile</h1>
+    </header>
+
+    <section class="chef-profile">
+        <img src="images/chef1.jpg" alt="Chef John">
+        <h2>Chef John</h2>
+        <p>Specializes in Italian Cuisine</p>
+        <h3>Services Offered:</h3>
+        <ul>
+            <li>Private Dinner</li>
+            <li>Cooking Class</li>
+        </ul>
+        <p><strong>Rate:</strong> $100 per hour</p>
+        <div class="star-rating">
+            <span>&#9733;&#9733;&#9733;&#9733;&#9734;</span> 4.5
+        </div>
+ <!-- Book Chef Button -->
+ <button id="bookChefButton" class="book-btn">Book Chef</button>
+
+ <!-- Modal -->
+ <div id="bookingModal" class="modal">
+     <div class="modal-content">
+         <span id="closeModal" class="close">&times;</span>
+         <h2>Book Chef John</h2>
+         <form id="bookingForm">
+             <label for="name">Your Name:</label>
+             <input type="text" id="name" name="name" required><br><br>
+             
+             <label for="date">Preferred Date:</label>
+             <input type="date" id="date" name="date" required><br><br>
+             
+             <label for="message">Message:</label>
+             <textarea id="message" name="message"></textarea><br><br>
+             
+             <button type="submit">Submit Booking</button>
+         </form>
+     </div>
+ </div>
+ <br><br>
+
+        <p><a href="index.html" class="book-chef-link">Back to Home</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Get A Chef Worldwide. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Get the modal and elements for opening and closing it
+const bookChefButton = document.getElementById('bookChefButton');
+const bookingModal = document.getElementById('bookingModal');
+const closeModal = document.getElementById('closeModal');
+
+// When the user clicks the "Book Chef" button, open the modal
+bookChefButton.onclick = function() {
+    bookingModal.style.display = "block";
+}
+
+// When the user clicks on the close button (x), close the modal
+closeModal.onclick = function() {
+    bookingModal.style.display = "none";
+}
+
+// When the user clicks anywhere outside the modal, close it
+window.onclick = function(event) {
+    if (event.target === bookingModal) {
+        bookingModal.style.display = "none";
+    }
+}
+
+// Optional: Add form submission handling
+const bookingForm = document.getElementById('bookingForm');
+
+bookingForm.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from actually submitting for now
+
+    // Get the form data (you can send this data to a server, etc.)
+    const formData = new FormData(bookingForm);
+    const userName = formData.get('name');
+    const bookingDate = formData.get('date');
+    const userMessage = formData.get('message');
+
+    // Example of logging the form data to the console (you can replace this with your form submission logic)
+    console.log(`Booking made by: ${userName}`);
+    console.log(`Preferred Date: ${bookingDate}`);
+    console.log(`Message: ${userMessage}`);
+
+    // Close the modal after submission (optional)
+    bookingModal.style.display = "none";
+
+    // Optionally, show a success message or redirect the user
+    alert('Your booking request has been submitted!');
+});
+
+    </script>
+
+    
+</body>
+</html>
