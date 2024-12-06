@@ -448,3 +448,34 @@ footer {
     color: #333;
     margin-left: 8px;
 }
+
+.book-chef-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #888; /* Light grey background */
+    color: white;
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.book-chef-link:hover {
+    background-color: #666; /* Darker grey for hover effect */
+}
+
+.book-chef-link:active {
+    background-color: #444; /* Even darker grey when clicked */
+}
+.chef-location {
+    display: flex;
+    align-items: center; /* Align icon and text */
+    margin-top: 10px;
+}
+
+.chef-location i {
+    margin-right: 8px; /* Space between icon and text */
+    color: #888; /* Icon color */
+}
