@@ -1,65 +1,72 @@
-// Sample data for chefs (including latitude and longitude)
-// Sample chefs data with rates and ratings
+// Sample chefs data with links to profile pages
 const chefs = [
     {
         name: "Chef John",
         image: "images/chef1.jpg",
         description: "Specializes in Italian Cuisine",
+        location: "New York City",
         services: ["Private Dinner", "Cooking Class"],
-        latitude: 40.7128,   // Example coordinates (New York City)
+        latitude: 40.7128,   // New York City
         longitude: -74.0060, // New York City
-        rate: "$100 per hour", // Adding the rate for Chef John
-        rating: 4.5 // Adding the rating (average rating)
+        rate: "$100 per hour", 
+        rating: 4.5, 
+        profilePage: "chef-john.html" // Link to individual chef profile page
     },
     {
         name: "Chef Sarah",
         image: "images/chef2.jpg",
         description: "Vegan & Plant-Based Dishes",
+        location: "Los Angeles",
         services: ["Vegan Catering", "Meal Delivery"],
-        latitude: 34.0522,   // Example coordinates (Los Angeles)
+        latitude: 34.0522,   // Los Angeles
         longitude: -118.2437, // Los Angeles
-        rate: "$80 per hour", // Adding the rate for Chef Sarah
-        rating: 4.0 // Adding the rating (average rating)
+        rate: "$80 per hour", 
+        rating: 4.0, 
+        profilePage: "chef-sarah.html"
     },
     {
         name: "Chef Maria",
         image: "images/chef3.jpg",
         description: "Expert in Mediterranean Cuisine",
+        location: "London",
         services: ["Private Dining", "Event Catering"],
-        latitude: 51.5074,   // Example coordinates (London)
+        latitude: 51.5074,   // London
         longitude: -0.1278,  // London
-        rate: "$120 per hour", // Adding the rate for Chef Maria
-        rating: 4.8 // Adding the rating (average rating)
+        rate: "$120 per hour", 
+        rating: 4.8,
+        profilePage: "chef-maria.html"
     }
 ];
 
-// Function to render chefs with rates and star ratings
+// Function to render chefs with links to their profiles
 function renderChefs() {
-    const chefList = document.getElementById('chef-list'); // Get the container for the chef cards
+    const chefList = document.getElementById('chef-list');
 
     chefs.forEach(chef => {
-        // Create a new chef card div
+        // Create a new chef card
         const chefCard = document.createElement('div');
         chefCard.classList.add('chef-card');
         
         // Create and append the chef image
         const chefImg = document.createElement('img');
-        chefImg.src = chef.image; // Path to the chef's image
+        chefImg.src = chef.image;
         chefImg.alt = `Image of ${chef.name}`;
         chefImg.classList.add('chef-img');
         chefCard.appendChild(chefImg);
         
-        // Create and append the chef name
+        // Create and append the chef name as a link
         const chefName = document.createElement('h3');
-        chefName.textContent = chef.name;
+        const chefLink = document.createElement('a');
+        chefLink.href = chef.profilePage;  // Link to chef profile
+        chefLink.textContent = chef.name;
+        chefName.appendChild(chefLink);
         chefCard.appendChild(chefName);
         
-        // Create and append the chef description
+        // Append description, services, rate, and rating
         const chefDescription = document.createElement('p');
         chefDescription.textContent = chef.description;
         chefCard.appendChild(chefDescription);
 
-        // Create and append the services list
         const chefServices = document.createElement('ul');
         chef.services.forEach(service => {
             const serviceItem = document.createElement('li');
@@ -68,7 +75,6 @@ function renderChefs() {
         });
         chefCard.appendChild(chefServices);
 
-        // Create and append the rate
         const chefRate = document.createElement('p');
         chefRate.classList.add('chef-rate');
         chefRate.textContent = chef.rate;
@@ -78,23 +84,21 @@ function renderChefs() {
         const starRating = document.createElement('div');
         starRating.classList.add('star-rating');
         
-        // Generate filled and empty stars based on rating
         for (let i = 1; i <= 5; i++) {
             const star = document.createElement('span');
             star.classList.add('star');
             
             if (i <= Math.floor(chef.rating)) {
-                star.innerHTML = '&#9733;';  // Filled star
+                star.innerHTML = '&#9733;';
             } else if (i === Math.ceil(chef.rating) && chef.rating % 1 !== 0) {
-                star.innerHTML = '&#9733;';  // Filled star for the decimal part
-                star.style.color = '#ff9800'; // Color the partially filled star
+                star.innerHTML = '&#9733;';
+                star.style.color = '#ff9800';
             } else {
-                star.innerHTML = '&#9734;';  // Empty star
+                star.innerHTML = '&#9734;';
             }
             starRating.appendChild(star);
         }
 
-        // Add the rating number in parentheses
         const ratingNumber = document.createElement('span');
         ratingNumber.classList.add('rating-number');
         ratingNumber.textContent = `(${chef.rating.toFixed(1)})`;
@@ -102,13 +106,14 @@ function renderChefs() {
 
         chefCard.appendChild(starRating);
 
-        // Append the chef card to the chef list container
         chefList.appendChild(chefCard);
     });
 }
 
-// Call the function to render chefs when the page loads
+// Call the render function when the page loads
 window.onload = renderChefs;
+
+
 
 
 
@@ -120,9 +125,14 @@ window.onload = function() {
         chefCard.className = "chef-card";
         chefCard.innerHTML = `
             <img src="${chef.image}" alt="${chef.name}">
-            <h3>${chef.name}</h3>
+            <h3 >${chef.name}</h3>
             <p>${chef.description}</p>
-            <button onclick="showBookingModal('${chef.name}')">Book Chef</button>
+            <div class="chef-location">
+                <i class="fas fa-map-marker-alt"></i> <!-- Location Icon -->
+                <b>${chef.location}</b>
+            </div>
+            <br>
+            <a href="${chef.profilePage}" class="book-chef-link">Book Chef</a>
         `;
         chefList.appendChild(chefCard);
     });
