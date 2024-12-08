@@ -6,138 +6,200 @@
     <title>Chef Maria - Profile</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Book Chef Button */
-.book-btn {
-    padding: 10px 20px;
-    background-color: #ff9800;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
-}
+        /* Styling for enhanced profile */
+        .chef-profile {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
 
-.book-btn:hover {
-    background-color: #f57c00;
-}
+        .chef-profile img {
+            width: 300px;
+            border-radius: 50%;
+            margin-top: 20px;
+        }
 
-/* The Modal (hidden by default) */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    padding-top: 60px;
-}
+        .chef-profile h2, .chef-profile h3, .chef-profile p {
+            color: #333;
+        }
 
-/* Modal Content */
-.modal-content {
-    background-color: #fefefe;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 500px;
-}
+        .chef-bio {
+            font-style: italic;
+            color: #555;
+            margin-top: 10px;
+            font-size: 18px;
+        }
 
-/* Close Button */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
+        .service-list {
+            list-style: none;
+            padding: 0;
+            font-size: 16px;
+            margin-top: 10px;
+        }
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
+        .service-list li {
+            margin: 5px 0;
+        }
 
-/* Style the form */
-form {
-    display: flex;
-    flex-direction: column;
-}
+        .star-rating span {
+            color: gold;
+        }
 
-form input, form textarea {
-    padding: 10px;
-    margin-bottom: 10px;
-}
+        .book-btn {
+            padding: 12px 24px;
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
 
-form button {
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
+        .book-btn:hover {
+            background-color: #f57c00;
+        }
 
-form button:hover {
-    background-color: #45a049;
-}
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
 
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 5px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            cursor: pointer;
+        }
+
+        /* Form Styling */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form input, form textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Chef Maria - Profile</h1>
-    </header>
+<header>
+    <h1>Chef Maria - Profile</h1>
+</header>
 
-    <section class="chef-profile">
-        <img src="images/chef3.jpg" alt="Chef Maria">
-        <h2>Chef Maria</h2>
-        <p>Expert in Mediterranean Cuisine</p>
-        <h3>Services Offered:</h3>
-        <ul>
-            <li>Private Dining</li>
-            <li>Event Catering</li>
-        </ul>
-        <p><strong>Rate:</strong> $120 per hour</p>
-        <div class="star-rating">
-            <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.8
+<section class="chef-profile">
+    <img src="images/chef3.jpg" alt="Chef Maria">
+    <h2>Chef Maria</h2>
+    <p><strong>Expert in Mediterranean Cuisine</strong></p>
+
+    <!-- Bio Section -->
+    <div class="chef-bio">
+        <p>Chef Maria brings a rich culinary heritage inspired by her Mediterranean roots. Known for her vibrant, healthy dishes, she has perfected the art of balancing fresh, seasonal ingredients with timeless cooking techniques. With years of training in top Mediterranean kitchens and a passion for sustainability, Chef Maria offers guests a taste of authentic Mediterranean cuisine like no other.</p>
+    </div>
+
+    <h3>Services Offered:</h3>
+    <ul class="service-list">
+        <li>Private Dining & Intimate Dinners</li>
+        <li>Event Catering (Weddings, Corporate Events, Special Occasions)</li>
+        <li>Cooking Classes (Learn Mediterranean Culinary Secrets)</li>
+        <li>Meal Prepping & Delivery (Fresh Mediterranean Meals Delivered to You)</li>
+        <li>Recipe Development & Consultation for Restaurants</li>
+    </ul>
+
+    <p><strong>Rate:</strong> $120 per hour (Custom pricing available for events and long-term bookings)</p>
+
+    <!-- Experience Section -->
+    <h3>Chef's Experience and Achievements</h3>
+    <p>Chef Maria honed her craft at prestigious culinary schools in Greece and Italy before refining her skills in the kitchens of renowned Mediterranean restaurants in Europe. Her expertise spans the full range of Mediterranean cuisine, from classic Greek dishes to Italian and North African specialties. She focuses on healthy, clean eating with an emphasis on fresh, organic produce, and locally sourced ingredients.</p>
+
+    <p><strong>Notable Achievements:</strong></p>
+    <ul>
+        <li>Featured in <em>Gourmet Mediterranean</em> for her innovative take on traditional recipes</li>
+        <li>Recipient of the <em>Best Mediterranean Chef</em> award in 2022</li>
+        <li>Guest chef at the <em>Mediterranean Culinary Festival</em> in Spain</li>
+        <li>Cookbook author: <em>Fresh Flavors of the Mediterranean</em> (available at major bookstores)</li>
+        <li>Certified in Advanced Mediterranean Gastronomy & Culinary Arts</li>
+    </ul>
+
+    <h3>Customer Reviews:</h3>
+    <div class="star-rating">
+        <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.8 out of 5 stars (Based on 50+ reviews)
+    </div>
+
+    <!-- Booking Button -->
+    <button id="bookChefButton" class="book-btn">Book Chef Maria</button>
+
+    <!-- Modal for Booking -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Book Chef Maria</h2>
+            <form id="bookingForm">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" name="date" required><br><br>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message"></textarea><br><br>
+                
+                <button type="submit">Submit Booking</button>
+            </form>
         </div>
+    </div>
 
-        <!-- Book Chef Button -->
- <button id="bookChefButton" class="book-btn">Book Chef</button>
+    <p><a href="index.html" class="book-chef-link">Back to Home</a></p>
+</section>
 
- <!-- Modal -->
- <div id="bookingModal" class="modal">
-     <div class="modal-content">
-         <span id="closeModal" class="close">&times;</span>
-         <h2>Book Chef Maria</h2>
-         <form id="bookingForm">
-             <label for="name">Your Name:</label>
-             <input type="text" id="name" name="name" required><br><br>
-             
-             <label for="date">Preferred Date:</label>
-             <input type="date" id="date" name="date" required><br><br>
-             
-             <label for="message">Message:</label>
-             <textarea id="message" name="message"></textarea><br><br>
-             
-             <button type="submit">Submit Booking</button>
-         </form>
-     </div>
- </div>
- <br><br>
-        <p><a href="index.html" class="book-chef-link">Back to Home</a></p>
-    </section>
+<footer>
+    <p>&copy; 2024 Get A Chef Worldwide. All rights reserved.</p>
+</footer>
 
-    <footer>
-        <p>&copy; 2024 Get A Chef Worldwide. All rights reserved.</p>
-    </footer>
-
-    <script>
-        // Get the modal and elements for opening and closing it
+<script>
+    // Get the modal and elements for opening and closing it
 const bookChefButton = document.getElementById('bookChefButton');
 const bookingModal = document.getElementById('bookingModal');
 const closeModal = document.getElementById('closeModal');
@@ -182,7 +244,7 @@ bookingForm.addEventListener('submit', function(event) {
     // Optionally, show a success message or redirect the user
     alert('Your booking request has been submitted!');
 });
+</script>
 
-    </script>
 </body>
 </html>
