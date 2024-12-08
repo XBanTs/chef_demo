@@ -6,138 +6,201 @@
     <title>Chef John - Profile</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Book Chef Button */
-.book-btn {
-    padding: 10px 20px;
-    background-color: #ff9800;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
-}
+        /* Styling for enhanced profile */
+        .chef-profile {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
 
-.book-btn:hover {
-    background-color: #f57c00;
-}
+        .chef-profile img {
+            width: 300px;
+            border-radius: 50%;
+            margin-top: 20px;
+        }
 
-/* The Modal (hidden by default) */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    padding-top: 60px;
-}
+        .chef-profile h2, .chef-profile h3, .chef-profile p {
+            color: #333;
+        }
 
-/* Modal Content */
-.modal-content {
-    background-color: #fefefe;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 500px;
-}
+        .chef-bio {
+            font-style: italic;
+            color: #555;
+            margin-top: 10px;
+            font-size: 18px;
+        }
 
-/* Close Button */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
+        .service-list {
+            list-style: none;
+            padding: 0;
+            font-size: 16px;
+            margin-top: 10px;
+        }
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
+        .service-list li {
+            margin: 5px 0;
+        }
 
-/* Style the form */
-form {
-    display: flex;
-    flex-direction: column;
-}
+        .star-rating span {
+            color: gold;
+        }
 
-form input, form textarea {
-    padding: 10px;
-    margin-bottom: 10px;
-}
+        .book-btn {
+            padding: 12px 24px;
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
 
-form button {
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
+        .book-btn:hover {
+            background-color: #f57c00;
+        }
 
-form button:hover {
-    background-color: #45a049;
-}
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
 
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 5px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            cursor: pointer;
+        }
+
+        /* Form Styling */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form input, form textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Chef John - Profile</h1>
-    </header>
+<header>
+    <h1>Chef John - Profile</h1>
+</header>
 
-    <section class="chef-profile">
-        <img src="images/chef1.jpg" alt="Chef John">
-        <h2>Chef John</h2>
-        <p>Specializes in Italian Cuisine</p>
-        <h3>Services Offered:</h3>
-        <ul>
-            <li>Private Dinner</li>
-            <li>Cooking Class</li>
-        </ul>
-        <p><strong>Rate:</strong> $100 per hour</p>
-        <div class="star-rating">
-            <span>&#9733;&#9733;&#9733;&#9733;&#9734;</span> 4.5
+<section class="chef-profile">
+    <img src="images/chef1.jpg" alt="Chef John">
+    <h2>Chef John</h2>
+    <p><strong>Specializing in Italian and Mediterranean Cuisine</strong></p>
+
+    <!-- Bio Section -->
+    <div class="chef-bio">
+        <p>Chef John is an experienced culinary expert specializing in authentic Italian and Mediterranean dishes. With a love for creating bold flavors and using fresh, seasonal ingredients, he offers guests a delightful culinary experience. Chef John trained in Italy and has spent over 15 years perfecting his craft, cooking at renowned restaurants and collaborating with top chefs around the world.</p>
+    </div>
+
+    <h3>Services Offered:</h3>
+    <ul class="service-list">
+        <li>Private Dinners & Events (Custom Menus)</li>
+        <li>Interactive Cooking Classes (Learn Classic Italian Techniques)</li>
+        <li>Specialized Mediterranean Tasting Menus</li>
+        <li>Catering for Weddings, Corporate Events, and Special Occasions</li>
+        <li>Meal Prepping & Delivery (Authentic Italian Cuisine at Your Door)</li>
+        <li>Consultation for Restaurant Menu Design & Development</li>
+    </ul>
+
+    <p><strong>Rate:</strong> $100 per hour (Custom pricing for events and long-term bookings)</p>
+
+    <!-- Experience Section -->
+    <h3>Chef's Experience and Achievements</h3>
+    <p>Chef John’s culinary journey began at the famous Culinary Institute of Florence, where he studied under top chefs specializing in Italian and Mediterranean cuisine. Over the years, Chef John has built a career working in Michelin-starred restaurants and has led kitchens at internationally acclaimed eateries across Europe and the U.S. His focus is on combining traditional cooking methods with a modern flair.</p>
+
+    <p><strong>Notable Achievements:</strong></p>
+    <ul>
+        <li>Recipient of the prestigious <em>Michelin Bib Gourmand</em> for three consecutive years</li>
+        <li>Appeared as a guest judge on the <em>Food Network</em> cooking competition series</li>
+        <li>Featured in <em>Gastronomy Journal</em> for his Mediterranean fusion dishes</li>
+        <li>Certified in Advanced Culinary Arts and Mediterranean Gastronomy</li>
+        <li>Worked alongside renowned chefs in world-class restaurants in Rome, Florence, and New York City</li>
+    </ul>
+
+    <h3>Customer Reviews:</h3>
+    <div class="star-rating">
+        <span>&#9733;&#9733;&#9733;&#9733;&#9734;</span> 4.5 out of 5 stars (Based on 40+ reviews)
+    </div>
+
+    <!-- Booking Button -->
+    <button id="bookChefButton" class="book-btn">Book Chef John</button>
+
+    <!-- Modal for Booking -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Book Chef John</h2>
+            <form id="bookingForm">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" name="date" required><br><br>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message"></textarea><br><br>
+                
+                <button type="submit">Submit Booking</button>
+            </form>
         </div>
- <!-- Book Chef Button -->
- <button id="bookChefButton" class="book-btn">Book Chef</button>
+    </div>
 
- <!-- Modal -->
- <div id="bookingModal" class="modal">
-     <div class="modal-content">
-         <span id="closeModal" class="close">&times;</span>
-         <h2>Book Chef John</h2>
-         <form id="bookingForm">
-             <label for="name">Your Name:</label>
-             <input type="text" id="name" name="name" required><br><br>
-             
-             <label for="date">Preferred Date:</label>
-             <input type="date" id="date" name="date" required><br><br>
-             
-             <label for="message">Message:</label>
-             <textarea id="message" name="message"></textarea><br><br>
-             
-             <button type="submit">Submit Booking</button>
-         </form>
-     </div>
- </div>
- <br><br>
+    <p><a href="index.html" class="book-chef-link">Back to Home</a></p>
+</section>
 
-        <p><a href="index.html" class="book-chef-link">Back to Home</a></p>
-    </section>
+<footer>
+    <p>&copy; 2024 Get A Chef Worldwide. All rights reserved.</p>
+</footer>
 
-    <footer>
-        <p>&copy; 2024 Get A Chef Worldwide. All rights reserved.</p>
-    </footer>
-
-    <script>
-        // Get the modal and elements for opening and closing it
+<script>
+    // Get the modal and elements for opening and closing it
 const bookChefButton = document.getElementById('bookChefButton');
 const bookingModal = document.getElementById('bookingModal');
 const closeModal = document.getElementById('closeModal');
@@ -182,9 +245,7 @@ bookingForm.addEventListener('submit', function(event) {
     // Optionally, show a success message or redirect the user
     alert('Your booking request has been submitted!');
 });
+</script>
 
-    </script>
-
-    
 </body>
 </html>
